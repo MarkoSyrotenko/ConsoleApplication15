@@ -43,6 +43,25 @@ public:
         return res;
     }
 
+    Point operator += (Point& obj)
+    {
+        this->x += obj.x;
+        this->y += obj.y;
+        return *this;
+    }
+    Point operator -= (Point& obj)
+    {
+        this->x -= obj.x;
+        this->y -= obj.y;
+        return *this;
+    }
+    Point operator *= (Point& obj)
+    {
+        this->x *= obj.x;
+        this->y *= obj.y;
+        return *this;
+    }
+
     Point operator + (int a)
     {
         Point res;
@@ -341,4 +360,9 @@ int main()
     matrix<Point> obj6(2, 2);
     cin >> obj6;
     cout << obj6;
+    matrix<Point> obj7(2, 2);
+    cin >> obj7;
+    cout << obj7;
+    matrix<Point> obj8 = obj6 + obj7;
+    cout << obj8;
 }
